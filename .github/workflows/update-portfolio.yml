@@ -35,4 +35,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add performance.csv dark_ver.svg light_ver.svg
           git diff --cached --quiet || git commit -m "Weekly portfolio metrics update"
+          git pull --rebase origin main
           git push
