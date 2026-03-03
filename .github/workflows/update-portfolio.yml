@@ -2,7 +2,7 @@ name: Update Portfolio Metrics
 
 on:
   schedule:
-    - cron: '0 14 * * 1'  # Every Monday at 2pm UTC (after US market close)
+    - cron: '0 14 * * 1-5'  # Every weekday at 2pm UTC (after US market close)
   workflow_dispatch:        # Allow manual trigger
 
 jobs:
