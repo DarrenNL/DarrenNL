@@ -1,4 +1,4 @@
-﻿import datetime
+import datetime
 import time
 from xml.dom import minidom
 import pandas as pd
@@ -41,33 +41,48 @@ def perf_counter(funct, *args):
     funct_return = funct(*args)
     return funct_return, time.perf_counter() - start
 
-def svg_overwrite(filename, age_data, cagr_data, total_data, alpha_data, beta_data, sharpe_data, drawdown_data):
+def _get_element_by_id(node, uid):
+    """Find element by id (minidom getElementById fails without DTD)."""
+    if node.nodeType == node.ELEMENT_NODE and node.getAttribute('id') == uid:
+        return node
+    for child in node.childNodes:
+        found = _get_element_by_id(child, uid)
+        if found:
+            return found
+    return None
+
+
+def svg_overwrite(filename, metrics):
     """
-    Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
+    Parse SVG files and update elements by ID.
+    metrics: dict with keys cagr, days, total, alpha, beta, sharpe, drawdown, sortino, var95, cvar95, winrate
     """
     svg = minidom.parse(filename)
-    f = open(filename, mode='w', encoding='utf-8')
-    tspan = svg.getElementsByTagName('tspan')
-    tspan[50].firstChild.data = cagr_data
-    tspan[53].firstChild.data = age_data
-    tspan[55].firstChild.data = total_data
-    tspan[57].firstChild.data = alpha_data
-    tspan[59].firstChild.data = beta_data
-    tspan[61].firstChild.data = sharpe_data
-    tspan[63].firstChild.data = drawdown_data
-    f.write(svg.toxml('utf-8').decode('utf-8'))
-    f.close()
+    ids = ['cagr', 'days', 'total', 'alpha', 'beta', 'sharpe', 'drawdown', 'sortino', 'var95', 'cvar95', 'winrate']
+    for uid in ids:
+        if uid in metrics:
+            el = _get_element_by_id(svg.documentElement, uid)
+            if el and el.firstChild:
+                el.firstChild.data = str(metrics[uid])
+    with open(filename, mode='w', encoding='utf-8') as f:
+        f.write(svg.toxml('utf-8').decode('utf-8'))
 
 if __name__ == '__main__':
     print('Calculation times:')
     age_data, age_time = perf_counter(daily_readme, datetime.datetime(2022, 7, 1))
     formatter('age calculation', age_time)
     data = pd.read_csv('performance.csv', header=None, index_col=0)[1].to_dict()
-    cagr = "{}%".format(round(((data['total_performance']/100+1)**(365/int(age_data))-1)*100,2))
-    total_performance = "{}%".format(data['total_performance'])
-    alpha = "{}".format(data['alpha'])
-    beta = "{}".format(data['beta'])
-    sharpe = "{}".format(data['sharpe'])
-    max_drawdown = "{}%".format(data['max_drawdown'])
-    svg_overwrite('dark_ver.svg', age_data, cagr, total_performance, alpha, beta, sharpe, max_drawdown)
-    svg_overwrite('light_ver.svg', age_data, cagr, total_performance, alpha, beta, sharpe, max_drawdown)
+    metrics = {
+        'cagr': "{}%".format(data.get('cagr', round(((data['total_performance']/100+1)**(365/int(age_data))-1)*100, 2))),
+        'days': str(age_data),
+        'total': "{}%".format(data['total_performance']),
+        'alpha': str(data.get('alpha', '')),
+        'beta': str(data.get('beta', '')),
+        'sharpe': str(data.get('sharpe', '')),
+        'drawdown': "{}%".format(data.get('roll_1y', '')) if data.get('roll_1y') not in (None, '') else "N/A",
+        'sortino': str(data.get('sortino', '')),
+        'cvar95': "{}%".format(data.get('cvar_95', '')),
+        'winrate': "{}%".format(data.get('win_rate', '')),
+    }
+    svg_overwrite('dark_ver.svg', metrics)
+    svg_overwrite('light_ver.svg', metrics)

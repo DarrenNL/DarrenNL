@@ -40,25 +40,24 @@
 	<text x="370" y="30" fill="#24292f">
 		<tspan x="370" y="30">Darren Li</tspan>
 		<tspan x="370" y="50">——————</tspan>
-		<tspan x="370" y="70" class="keyColor">Title</tspan>: <tspan class="valueColor">Director | Quantitative Strategies | Full Stack Developer</tspan>
-		<tspan x="370" y="90" class="keyColor">Experience</tspan>: <tspan class="valueColor">5+ years in Finance and Technology</tspan><tspan class="commentColor"> #Ex-Entrepreneur</tspan>
-		<tspan x="370" y="110" class="keyColor">Education</tspan>: <tspan class="valueColor">UBC Sauder MBA, UWaterloo Math</tspan><tspan class="commentColor"> #Finance|Tech|Business</tspan>
+		<tspan x="370" y="70" class="keyColor">Title</tspan>: <tspan class="valueColor">Director | Quant &amp; AI/ML Research | Full Stack Developer</tspan>
+		<tspan x="370" y="90" class="keyColor">Experience</tspan>: <tspan class="valueColor">5+ years in finance and tech</tspan><tspan class="commentColor"> #Ex-Entrepreneur</tspan>
+		<tspan x="370" y="110" class="keyColor">Education</tspan>: <tspan class="valueColor">Yale MAM, UBC MBA, UWaterloo Math</tspan>
 		<tspan x="370" y="130" class="keyColor">Specialization</tspan>: <tspan class="valueColor">Quantitative Research, ML Optimization</tspan>
 		<tspan x="370" y="150" class="keyColor">Skills</tspan>: <tspan class="valueColor">Python, C++, C#, SQL, Java, R, HTML, CSS, JavaScript</tspan>
-		<tspan x="370" y="170" class="keyColor">Frameworks</tspan>: <tspan class="valueColor">QuantLib, mlfinlab, FinRL, PyMC, TensorFlow, TA-Lib</tspan>
-		<tspan x="370" y="210" class="keyColor">Accomplishments</tspan>: <tspan class="valueColor">Proprietary Algorithms, Venture Incubation</tspan>
-		<tspan x="370" y="230" class="keyColor">Impact</tspan>: <tspan class="valueColor">$60 Million AUM, 30+ M&amp;A and Capital Raises</tspan>
+		<tspan x="370" y="170" class="keyColor">Tools</tspan>: <tspan class="valueColor">PyTorch, Tensorflow, STL, Multithreading, CUDA Optimization</tspan>
+		<tspan x="370" y="210" class="keyColor">Accomplishments</tspan>: <tspan class="valueColor">Proprietary algorithms, venture incubation</tspan>
+		<tspan x="370" y="230" class="keyColor">Impact</tspan>: <tspan class="valueColor">$70M AUM, 30+ M&amp;A and capital raises</tspan>
 		<tspan x="370" y="270" class="keyColor">Projects</tspan>: <tspan class="valueColor">Quantitative Research and Trading</tspan>
 		<tspan x="370" y="310" class="keyColor">Quant Portfolio Key Stats</tspan>
 		<tspan x="370" y="330">——————</tspan>
-		<tspan x="370" y="350" class="keyColor">CAGR</tspan>: <tspan class="addColor">50.99%</tspan><tspan class="commentColor"> #see repository</tspan>
-		<tspan x="370" y="370" class="keyColor">Days Since Inception</tspan>: <tspan class="valueColor">840</tspan> | <tspan class="keyColor">Performance Since Inception</tspan>: <tspan class="addColor">158.11%</tspan>
-		<tspan x="370" y="390" class="keyColor">Alpha</tspan>: <tspan class="valueColor">0.14</tspan> | <tspan class="keyColor">Beta</tspan>: <tspan class="valueColor">0.9</tspan> | <tspan class="keyColor">Sharpe</tspan>: <tspan class="valueColor">1.34</tspan> | <tspan class="keyColor">Max Drawdown</tspan>: <tspan class="valueColor">3.84%</tspan>
-		<tspan x="370" y="430" class="keyColor">Contact</tspan>
-		<tspan x="370" y="450">——————</tspan>
-		<tspan x="370" y="470" class="keyColor">Email</tspan>: <tspan class="valueColor">darren.li@utrusthomes.com</tspan>
-		<tspan x="370" y="490" class="keyColor">LinkedIn</tspan>: <tspan class="valueColor">linkedin.com/in/darren-y-li</tspan>
-		<tspan x="370" y="510" class="keyColor">GitHub</tspan>: <tspan class="valueColor">github.com/DarrenNL</tspan>
+		<tspan x="370" y="350" class="keyColor">Annualized Returns</tspan>: <tspan id="cagr" class="addColor">49.87%</tspan> | <tspan class="keyColor">Rolling 1Y</tspan>: <tspan id="drawdown" class="addColor">70.01%</tspan>
+		<tspan x="370" y="370" class="keyColor">Days Since Inception</tspan>: <tspan id="days" class="valueColor">1340</tspan> | <tspan class="keyColor">Performance Since Inception</tspan>: <tspan id="total" class="addColor">341.21%</tspan>
+		<tspan x="370" y="390" class="keyColor">Alpha</tspan>: <tspan id="alpha" class="valueColor">0.21</tspan> | <tspan class="keyColor">Beta</tspan>: <tspan id="beta" class="valueColor">1.2</tspan> | <tspan class="keyColor">Sharpe</tspan>: <tspan id="sharpe" class="valueColor">1.65</tspan> | <tspan class="keyColor">Sortino</tspan>: <tspan id="sortino" class="valueColor">1.63</tspan>		<tspan x="370" y="410" class="keyColor">VaR 95%</tspan>: <tspan id="var95" class="valueColor">-2.61%</tspan> | <tspan class="keyColor">CVaR 95%</tspan>: <tspan id="cvar95" class="valueColor">-3.82%</tspan> | <tspan class="keyColor">Win Rate</tspan>: <tspan id="winrate" class="valueColor">56.26%</tspan>
+		<tspan x="370" y="450" class="keyColor">Contact</tspan>
+		<tspan x="370" y="470">——————</tspan>
+		<tspan x="370" y="490" class="keyColor">Email</tspan>: <tspan class="valueColor">darren.li@yale.edu</tspan>
+		<tspan x="370" y="510" class="keyColor">LinkedIn</tspan>: <tspan class="valueColor">linkedin.com/in/darren-y-li</tspan>
 	</text>
 
 </svg>
