@@ -1,0 +1,38 @@
+name: Update Portfolio Metrics
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'  # Every Monday at 2pm UTC (after US market close)
+  workflow_dispatch:        # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install yfinance pandas numpy scipy
+
+      - name: Decode portfolio config
+        run: echo "${{ secrets.PORTFOLIO_CONFIG }}" | base64 -d > portfolio_config.json
+
+      - name: Run portfolio calculator
+        run: python calculate_portfolio.py
+
+      - name: Cleanup config
+        run: rm -f portfolio_config.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add performance.csv dark_ver.svg light_ver.svg
+          git diff --cached --quiet || git commit -m "Weekly portfolio metrics update"
+          git push
