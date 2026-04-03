@@ -1,6 +1,6 @@
-total_performance,335.81
-spy_performance,82.94
-cagr,48.02
+total_performance,335.55
+spy_performance,83.26
+cagr,48.0
 alpha,0.21
 beta,1.22
 sharpe,1.59
@@ -12,12 +12,12 @@ var_95,-2.66
 var_99,-4.7
 cvar_95,-3.84
 cvar_99,-5.52
-up_capture,141.0
-down_capture,119.44
+up_capture,140.97
+down_capture,119.5
 correlation,0.74
 win_rate,56.16
 stability,0.96
-roll_1y,78.29
-roll_3y,53.69
-roll_5y,48.42
+roll_1y,78.18
+roll_3y,53.66
+roll_5y,48.4
 years,3.75
