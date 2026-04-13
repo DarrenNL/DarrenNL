@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 total_performance,375.48
 spy_performance,91.72
 cagr,50.99
@@ -20,4 +21,28 @@ stability,0.96
 roll_1y,96.91
 roll_3y,58.13
 roll_5y,51.53
+=======
+total_performance,338.48
+spy_performance,89.95
+cagr,47.8
+alpha,0.2
+beta,1.18
+sharpe,1.63
+sortino,1.62
+max_drawdown,29.14
+avg_drawdown,5.4
+volatility,26.15
+var_95,-2.58
+var_99,-4.43
+cvar_95,-3.68
+cvar_99,-5.3
+up_capture,135.86
+down_capture,114.98
+correlation,0.75
+win_rate,56.12
+stability,0.96
+roll_1y,85.11
+roll_3y,53.91
+roll_5y,48.29
+>>>>>>> b389cee6713522ebcbe141dc66a05df0efaa41ab
 years,3.78
