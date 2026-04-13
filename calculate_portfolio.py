@@ -1,7 +1,7 @@
 """
-Alpha Picks portfolio performance calculator.
+Portfolio performance calculator.
 
-Model: Seeking Alpha Alpha Picks (S&P Global methodology)
+Model:
 - Each pick receives $1 of new capital, bought at open price on pick date
 - Sells use closing price on sell date
 - Sell/trim proceeds are reinvested equally into all remaining positions
